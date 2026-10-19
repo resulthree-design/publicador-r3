@@ -1,0 +1,8 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cuenta conectada – Publicador R3</title><link rel="stylesheet" href="style.css"></head><body>
+<h1 id="t">Conectando…</h1><p id="m"></p><p><code id="c"></code></p>
+<script>
+var p=new URLSearchParams(location.search),c=p.get("code"),e=p.get("error");
+document.getElementById("t").textContent=c?"Cuenta conectada ✓":(e?"No se pudo conectar":"Publicador R3");
+document.getElementById("m").textContent=c?"Listo. Copiá esta dirección completa (la de la barra del navegador) y pasásela a Resulthree.":(e?("Error: "+e+" "+(p.get("error_description")||"")):"Esta página recibe la autorización de las cuentas conectadas.");
+if(c)document.getElementById("c").textContent=location.href;
+</script></body></html>
